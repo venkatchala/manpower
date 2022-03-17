@@ -4,20 +4,14 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import peopleStore from "./store";
-import PeopleListDetail from "./peopleList";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AddNewUserDetail from "./addNewUser";
+import Main from "./header";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <Provider store={peopleStore}>
-    <h1>People Management App</h1>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AddNewUserDetail />}></Route>
-        <Route path="/peopleList" element={<PeopleListDetail />}></Route>
-      </Routes>
+      <Main />
     </BrowserRouter>
-    <h1>Thank You</h1>
   </Provider>,
   document.getElementById("root")
 );
